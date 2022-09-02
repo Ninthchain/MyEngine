@@ -1,0 +1,23 @@
+{
+    "name": "tg-mom",
+    "version": "1.0.0",
+    "description": "null",
+    "main": "index.js",
+    "scripts": {
+        "index": "index.js"
+    },
+    "keywords": [
+        "node",
+        "nodejs",
+        "telegrambot"
+    ],
+    "author": "headburner",
+    "license": "ISC",
+    "devDependencies": {
+        "input": "^1.0.1",
+        "telegram": "^2.11.2"
+    },
+    "dependencies": {
+        "express": "^4.18.1"
+    }
+}
