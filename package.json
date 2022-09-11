@@ -1,4 +1,5 @@
 {
+
     "name": "tg-mom",
     "version": "1.0.0",
     "description": "null",
@@ -18,6 +19,9 @@
         "telegram": "^2.11.2"
     },
     "dependencies": {
+        "chalk": "^5.0.1",
+        "cli-color": "^2.0.3",
         "express": "^4.18.1"
     }
+
 }

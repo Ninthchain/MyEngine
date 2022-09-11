@@ -1,31 +1,38 @@
-const { TelegramClient } = require('telegram')
-const { StringSession } = require('telegram/sessions')
-const { createServer } = require('http')
+const express = require("./express")
+const app = express()
 
-var server = createServer(async(request, response) => {
+var currentStatus = new String()
 
-    if (request.url == "/debug-exit") {
+app.route('/')
+    .get((req, res) => {
 
-        console.log("Request handler random was called.");
-        response.writeHead(200, { "Content-Type": "application/json" });
+        res.send("Wilkommen!")
+    })
 
-        var otherArray = ["item1", "item2"];
-        var otherObject = { item1: "item1val", item2: "item2val" };
+app.route('/task-status')
+    .get((req, res) => {
+        res.json({
+            code: 200
+        })
+    })
 
-        var json = JSON.stringify({
-            anObject: otherObject,
-            anArray: otherArray,
-            another: "item"
-        });
+app.route('/Talk')
+    .get((req, res) => {
 
-        response.end(json);
+    })
 
-        server.close();
+app.route('/exit')
+    .get((req, res) => {
+        console.log(`Recieved request from ${req.ip}`)
 
-        return;
-    }
-})
+        res.json({
+            code: 200,
+            res: {
+                message: "byyeee!"
+            }
+        })
 
-server.listen(3000, () => {
-    console.log('Server started its work')
-})
+        process.exit(200)
+    })
+
+app.listen()
