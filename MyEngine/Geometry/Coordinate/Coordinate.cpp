@@ -43,12 +43,12 @@ Coordinate& Coordinate::operator=(const Coordinate &rvalue)
 
 double Coordinate::getX()
 {
-    return 0.0;
+    return *this->x_;
 }
 
 double Coordinate::getY()
 {
-    return 0.0;
+    return *this->y_;
 }
 
 void Coordinate::move(double x, double y)
